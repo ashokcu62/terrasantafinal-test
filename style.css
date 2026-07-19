@@ -1,0 +1,1041 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  padding-top: 80px; /* Prevents content hiding under fixed header */
+}
+
+/* Header */
+header {
+  position: fixed;     /* Keeps menu fixed at top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  z-index: 1000;       /* Ensures it stays above other elements */
+}
+
+/* Logo */
+.logo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #054C73;
+}
+
+/* Navigation Menu */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links li a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;     /* Smaller than logo */
+  font-weight: 500;
+  text-decoration: none;
+  color: #000;         /* Black menu text */
+  transition: all 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #054C73;
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #054C73;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: #fff;
+    flex-direction: column;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    border-top: 1px solid #ddd;
+  }
+
+  .nav-links.active {
+    max-height: 400px; /* Expand menu */
+    padding: 20px 0;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  /* Menu items as buttons */
+  .nav-links li a {
+    display: inline-block;
+    width: 80%;
+    margin: 5px auto;
+    padding: 10px;
+    background-color: #054C73;
+    color: #fff;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+  }
+
+  .nav-links li a:hover {
+    background-color: #03608f;
+    color: #fff;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+
+
+/* Gallery Grid */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  padding: 30px;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+
+/* About Page Styling */
+.about-container {
+  padding: 50px;
+  font-family: 'Montserrat', sans-serif;
+  min-height: 100vh; /* ensures gradient covers full viewport height */
+ 
+}
+
+/* Headings */
+.about-container h1,
+.about-container h2,
+.about-container h3,
+.about-container h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 34px;
+  color: #054C73;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+
+/* Paragraphs */
+.about-container p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  color: #000;
+  text-align: justify;
+  margin-bottom: 15px;
+}
+
+/* Add spacing between p and next heading */
+.about-container p + h1,
+.about-container p + h2,
+.about-container p + h3 {
+  margin-top: 80px;
+}
+
+/* Divider after headings and paragraphs */
+.divider {
+  border-bottom: 2px solid #000;
+  margin: 20px auto;
+  width: 80%;
+}
+
+/* Dot list styling */
+.dot-list {
+  list-style-type: disc;
+  padding-left: 40px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.dot-list li {
+  font-size: 18px;
+  color: #000;
+  margin-bottom: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .about-container h1,
+  .about-container h2,
+  .about-container h3,
+  .about-container h4 {
+    font-size: 24px;
+  }
+
+  .about-container p,
+  .dot-list li {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 500px) {
+  .logo {
+    font-size: 20px;
+  }
+
+  .nav-links li a {
+    font-size: 20px;
+  }
+
+  .menu-toggle {
+    font-size: 24px;
+  }
+
+  .about-container h1,
+  .about-container h2,
+  .about-container h3,
+  .about-container h4 {
+    font-size: 20px;
+  }
+
+  .about-container p,
+  .dot-list li {
+    font-size: 14px;
+  }
+}
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  background-color: #f9f9f9;
+}
+
+/* Apply Montserrat + color to all headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat", sans-serif;
+  color: #054C73;
+  text-align: center; /* keeps headings centered */
+  margin: 20px 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+}
+
+.card img {
+  width: 100%;
+  height: 250px; /* taller image area */
+  object-fit: contain; /* keeps full image visible */
+  background-color: #f0f0f0; /* optional neutral backdrop */
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.card-body h4 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.card-body .details {
+  font-size: 14px;
+  font-weight: bold; /* bold for other texts */
+  color: #333;
+  line-height: 1.5;
+  text-align: center; /* keeps details aligned under product name */
+}
+/* Hero Section */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* always fills the screen height */
+  background: url('images/hero.jpg') no-repeat center center/cover;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 200px;
+  box-sizing: border-box;
+}
+
+.hero-content {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 25px;
+  max-width: 420px;
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+}
+
+.hero .new-arrival {
+  font-size: 14px;
+  color: black;
+  margin-bottom: 10px;
+}
+
+.hero h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 42px;
+  font-weight: 700;
+  color: white;
+  line-height: 1.2;
+  margin-bottom: 15px;
+  white-space: nowrap; /* single line on large screens */
+}
+
+.hero-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  color: black;
+  margin-bottom: 20px;
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #054C73;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.hero-btn:hover {
+  background: white;
+  color: #054C73;
+  border: 1px solid #054C73;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1440px) {
+  .hero {
+    padding-right: 150px;
+  }
+  .hero h1 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero {
+    padding-right: 100px;
+    justify-content: center;
+  }
+  .hero h1 {
+    font-size: 32px;
+    white-space: normal; /* allow wrapping */
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-right: 0;
+    text-align: center;
+  }
+  .hero-content {
+    max-width: 90%;
+  }
+  .hero h1 {
+    font-size: 26px;
+  }
+}
+
+/* Delivery & Care Section */
+.delivery-care {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 100px; /* increased gap between logos */
+  padding: 50px 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.info-box {
+  text-align: center;
+  max-width: 320px;
+}
+
+.info-icon {
+  width: 60px;   /* icon size */
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+.info-text {
+  font-size: 24px;   /* bigger text */
+  font-weight: bold; /* bold */
+  color: #000;       /* black */
+  line-height: 1.4;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .delivery-care {
+    gap: 60px;
+  }
+  .info-icon {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .delivery-care {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+  .info-box {
+    max-width: 90%;
+  }
+  .info-text {
+    font-size: 20px; /* slightly smaller for mobile */
+  }
+}
+
+/* Base Resets */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333333;
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevents whole-page broken scrolling */
+}
+
+/* Section Wrapper */
+.collection-section {
+    padding: 60px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main Heading */
+.section-title {
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    text-align: center;
+    color: #111111;
+    padding: 0 20px;
+}
+
+/* Horizontal Axis Container */
+.horizontal-scroll-container {
+    display: flex;
+    flex-direction: row;
+    gap: 40px; /* Gap space between the 4 horizontal cards */
+    padding: 20px 40px 40px 40px;
+    overflow-x: auto; /* Enables smooth mouse trackpad horizontal scrolling */
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; /* Smooth inertia for mobile browsers */
+}
+
+/* Individual Card Template (Locked strictly to your 1440px x 1024px sizing requirement) */
+.product-card {
+    display: flex;
+    flex-shrink: 0; /* Prevents the card from squishing smaller than its explicit width */
+    width: 1440px;
+    height: 1024px;
+    background-color: #ffffff;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+/* Left Side - Image Segment (Takes up 50% / 720px width) */
+.card-left {
+    width: 50%;
+    height: 100%;
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Right Side - Text Segment (Takes up 50% / 720px width) */
+.card-right {
+    width: 50%;
+    height: 100%;
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically aligns the content */
+    background-color: #ffffff;
+}
+
+/* Typography Elements */
+.product-title {
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: #222222;
+}
+
+.product-description {
+    font-size: 1.25rem;
+    color: #666666;
+    max-width: 520px; /* Keeps readable line widths */
+}
+
+/* Optional Custom Scrollbar Styling for Webkit Browsers */
+.horizontal-scroll-container::-webkit-scrollbar {
+    height: 10px;
+}
+.horizontal-scroll-container::-webkit-scrollbar-track {
+    background: #e4e4e4;
+    border-radius: 10px;
+    margin: 0 40px;
+}
+.horizontal-scroll-container::-webkit-scrollbar-thumb {
+    background: #999999;
+    border-radius: 10px;
+}
+.horizontal-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: #666666;
+}
+
+/* Tablet and Small Screens Adjustments */
+@media (max-width: 1480px) {
+    .product-card {
+        /* Scales card width smaller down to the viewport size if 1440px forces too much overflow on tight spaces */
+        width: 85vw; 
+        height: 70vh; /* Adjusts height proportionally to fit display constraints smoothly */
+    }
+    .card-right {
+        padding: 40px;
+    }
+    .product-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .product-card {
+        flex-direction: column; /* Switches to vertical stack for narrow smartphone screen widths */
+        width: 80vw;
+        height: 80vh;
+    }
+    .card-left, .card-right {
+        width: 100%;
+        height: 50%;
+    }
+    .card-right {
+        padding: 24px;
+    }
+}
+
+/* Base Resets */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333333;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Section Wrapper */
+.collection-section {
+    padding: 60px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Main Heading (Updated with color #054C73 and Montserrat) */
+.section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    text-align: center;
+    color: #054C73;
+    padding: 0 20px;
+}
+
+/* Slider Position Wrapper */
+.slider-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1540px; /* Accounts for cards width + button clearances */
+    padding: 0 50px;
+}
+
+/* Horizontal Axis Container */
+.horizontal-scroll-container {
+    display: flex;
+    flex-direction: row;
+    gap: 40px; 
+    padding: 20px 0 40px 0;
+    overflow-x: auto; 
+    scroll-behavior: smooth;
+    /* CSS Snap Point behavior locks cards perfectly into place */
+    scroll-snap-type: x mandatory; 
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Hide native scrollbar for a cleaner premium look */
+.horizontal-scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Individual Card Template (1440px x 1024px Layout Frame) */
+.product-card {
+    display: flex;
+    flex-shrink: 0; 
+    width: 1440px;
+    height: 1024px;
+    background-color: #ffffff;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+    border-radius: 6px;
+    overflow: hidden;
+    scroll-snap-align: start;
+}
+
+/* Left Side - Made Smaller (Takes up 30% width instead of 50%) */
+.card-left {
+    width: 30%; 
+    height: 100%;
+    background-color: #f2f2f2; /* Subtle background fill under image border bounds */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px; /* Pads image so it looks smaller and elegant inside its frame */
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Prevents stretching and showcases smaller profile details */
+    display: block;
+}
+
+/* Right Side - Expanded Container (Takes up 70% width) */
+.card-right {
+    width: 70%;
+    height: 100%;
+    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    background-color: #ffffff;
+}
+
+/* Card Typography (Updated with color #054C73 and Montserrat) */
+.product-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: #054C73;
+}
+
+.product-description {
+    font-size: 1.25rem;
+    color: #666666;
+    max-width: 650px; 
+}
+
+/* Slider Functional Navigation Buttons */
+.slide-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: #054C73;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: background-color 0.2s ease, opacity 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.slide-btn:hover {
+    background-color: #03324d;
+}
+
+.slide-btn:active {
+    opacity: 0.8;
+}
+
+.prev-btn {
+    left: 20px;
+}
+
+.next-btn {
+    right: 20px;
+}
+
+/* Screen Size Fallbacks */
+@media (max-width: 1540px) {
+    .product-card {
+        width: 80vw;
+        height: 70vh;
+    }
+    .card-right {
+        padding: 50px;
+    }
+    .product-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .product-card {
+        flex-direction: column;
+        width: 75vw;
+        height: 75vh;
+    }
+    .card-left, .card-right {
+        width: 100%;
+    }
+    .card-left {
+        height: 40%;
+        padding: 20px;
+    }
+    .card-right {
+        height: 60%;
+        padding: 24px;
+    }
+    .slide-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    .prev-btn { left: 5px; }
+    .next-btn { right: 5px; }
+}
+
+/* Best Sellers Section */
+.best-sellers {
+  padding: 60px 20px;
+  background: #f9f9f9;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.section-heading {
+  font-size: 36px;
+  font-weight: 700;
+  color: #054C73;
+  margin-bottom: 40px;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* card defines full height */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.card img {
+  flex: 1;              /* image takes all available vertical space */
+  width: 100%;
+  object-fit: cover;    /* fills card area without distortion */
+}
+
+.product-name {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+  padding: 15px;
+  background: #f9f9f9;
+}
+
+/* What We Offer Section */
+.offers {
+  padding: 60px 20px;
+  background: #f9f9f9;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+
+.section-heading {
+  font-size: 36px;
+  font-weight: 700;
+  color: #054C73;
+  margin-bottom: 40px;
+}
+
+.offers-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.offer-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 25px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.offer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.offer-card h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #054C73;
+  margin-bottom: 15px;
+}
+
+.offer-card p {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Footer Section */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: #054C73;
+  color: #fff;
+  padding: 40px 20px;
+  flex-wrap: wrap;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.footer-left {
+  flex: 1;
+  min-width: 250px;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-right {
+  flex: 1;
+  min-width: 250px;
+  text-align: right;
+}
+
+.social, .contact {
+  margin-bottom: 20px;
+}
+
+.social-icon {
+  width: 28px;
+  height: 28px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-right {
+    text-align: center;
+    margin-top: 20px;
+  }
+  .social-icon {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
+/* Footer Section */
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: #054C73;
+  color: #fff;
+  padding: 40px 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.footer-left {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer .logo {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #FFD700; /* Gold accent */
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-right {
+  flex: 1;
+  min-width: 250px;
+  text-align: right;
+}
+
+.social, .contact {
+  margin-bottom: 20px;
+}
+
+.social-icon {
+  width: 28px;
+  height: 28px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+.footer-bottom {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.3);
+  padding-top: 10px;
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-right {
+    text-align: center;
+    margin-top: 20px;
+  }
+  .social-icon {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
